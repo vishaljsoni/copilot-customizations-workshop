@@ -1,0 +1,12 @@
+{
+  "$schema": "https://aka.ms/copilot-hooks-schema",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "type": "command",
+        "command": "node --test 2>&1 || true",
+        "timeout": 30
+      }
+    ]
+  }
+}

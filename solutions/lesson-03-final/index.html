@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="todo-app">
+      <header class="todo-app__header">
+        <h1 class="todo-app__title">To-Do</h1>
+      </header>
+
+      <form class="todo-form" id="todo-form" autocomplete="off">
+        <label class="todo-form__label" for="todo-input">New task</label>
+        <input
+          class="todo-form__input"
+          id="todo-input"
+          name="todo-input"
+          type="text"
+          placeholder="What needs doing?"
+          required
+          maxlength="200"
+        />
+        <button class="todo-form__button" type="submit">Add</button>
+      </form>
+
+      <nav class="todo-filters" aria-label="Filter tasks">
+        <button
+          class="todo-filters__button todo-filters__button--active"
+          type="button"
+          data-filter="all"
+        >
+          All
+        </button>
+        <button class="todo-filters__button" type="button" data-filter="active">
+          Active
+        </button>
+        <button class="todo-filters__button" type="button" data-filter="completed">
+          Completed
+        </button>
+      </nav>
+
+      <ul class="todo-list" id="todo-list" aria-live="polite"></ul>
+
+      <p class="todo-app__empty" id="todo-empty" hidden>No tasks to show.</p>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
