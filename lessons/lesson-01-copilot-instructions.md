@@ -53,7 +53,15 @@ Open the files Copilot created. Look for any of these (you will probably see at 
 
 ### Step 1.5 — Verify the app loads
 
-Open `index.html` in a browser (right-click → "Reveal in Finder"/"Reveal in Explorer", then double-click). Add, complete, and delete a task. **It probably works.** That's not the point — the point is *style and structure are uncontrolled*.
+From the integrated terminal, serve the app:
+
+```bash
+npx serve .
+```
+
+Open the URL shown in the terminal (usually **http://localhost:3000**). Add, complete, and delete a task. **It probably works.** That's not the point — the point is *style and structure are uncontrolled*.
+
+Press **Ctrl+C** to stop the server when done.
 
 ### Step 1.6 — Discard the baseline files
 
@@ -163,12 +171,20 @@ Open the files Copilot created and compare to [`solutions/lesson-01-final/`](../
 
 ### Step 1.12 — Smoke-test the app
 
-Open `index.html` in a browser. You should be able to:
+From the integrated terminal, serve the app:
+
+```bash
+npx serve .
+```
+
+Open the URL shown in the terminal (usually **http://localhost:3000**). You should be able to:
 - Type a task and press Enter (or click Add) to add it
 - Click the checkbox to toggle complete (visual line-through)
 - Click the × to delete
 
 There is no persistence yet (refreshing the page clears tasks). That's lesson 2's job.
+
+Press **Ctrl+C** to stop the server when done.
 
 ---
 

@@ -150,9 +150,9 @@ Revert that last change to state.js.
 
 After the revert, the next hook firing should show all tests green again.
 
-### Step 4.8 — Inspect why some tools fire and others don't
+### Step 4.8 — Confirm the hook only fires on tool use
 
-Most edits to `state.js` or `app.js` trigger the hook because Copilot uses an `editFiles` tool. Pure-chat exchanges (questions, explanations) won't trigger `PostToolUse` because no tool was invoked.
+The hook as configured has no tool filter — it fires on **every** `PostToolUse` event, whether the agent used an edit tool, a read tool, or a terminal tool. The only time it stays quiet is when the agent responds with pure text and invokes **zero** tools.
 
 Try sending:
 
@@ -160,7 +160,9 @@ Try sending:
 Explain what filterTodos does in plain English. Don't change any files.
 ```
 
-The Hooks output channel should stay quiet. Hook fires on **tool use**, not on responses.
+The Hooks output channel should stay quiet. No tool was invoked, so `PostToolUse` never fires.
+
+> **Note:** If you want the hook to run only after specific tools (e.g., file edits), add a `"tools"` filter to the hook entry — but for this workshop, running tests after every tool use is fine.
 
 ---
 

@@ -189,7 +189,15 @@ node --test
 
 You should see all tests pass (output ends with `ℹ pass N`, with N ≥ 4).
 
-Open `index.html` in your browser. Add a task. Refresh the page. The task should still be there.
+From the integrated terminal, serve the app:
+
+```bash
+npx serve .
+```
+
+Open the URL shown in the terminal (usually **http://localhost:3000**). Add a task. Refresh the page. The task should still be there.
+
+Press **Ctrl+C** to stop the server when done.
 
 ---
 

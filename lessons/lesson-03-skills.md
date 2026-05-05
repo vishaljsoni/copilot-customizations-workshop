@@ -106,7 +106,7 @@ The function MUST be:
 
 ### 5. Verify
 - Run `node --test` in the terminal.
-- Open `index.html` in a browser and click through the new feature.
+- Serve with `npx serve .` and click through the new feature in the browser.
 - Check the browser console for errors.
 
 ## Anti-patterns to avoid
@@ -175,12 +175,20 @@ node --test 2>&1 | tail -5
 
 You should see at least 8 tests passing (6 from lesson 2 + at least 2 new for `filterTodos`).
 
-Open `index.html` in your browser:
+From the integrated terminal, serve the app:
+
+```bash
+npx serve .
+```
+
+Open the URL shown in the terminal (usually **http://localhost:3000**):
 - Add three tasks; complete one of them.
 - Click **Active** → only the incomplete two show.
 - Click **Completed** → only the one completed shows.
 - Click **All** → all three reappear.
 - Refresh → state persists (lesson 2 is still working).
+
+Press **Ctrl+C** to stop the server when done.
 
 ### Step 3.8 — Try explicit invocation
 
